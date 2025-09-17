@@ -37,10 +37,27 @@
   <section>
     <div class = 'search-actors'>
       <h3>Search Actors</h3>
-      <label>Age Range: <input type="text" placeholder="e.g. 20-30"></label>
-      <label>Gender: <input type="text" placeholder="Male/Female"></label>
-      <label>Skills: <input type="text" placeholder="e.g. Singing, Dancing"></label>
-      <button>Search</button>
+      
+      <div class = 'filters'>
+        <p>Age: </p>
+        <input type = 'input'>
+
+        <p>Gender: </p>
+        <select>
+          <option>Male</option>
+          <option>Female</option>
+          <option>Non-Binary</option>
+        </select>
+
+        <p>Skills: </p>
+        <select>
+          <option>Singing</option>
+          <option>Dancing</option>
+          <option>Acting</option>
+        </select>
+
+        <button>Search</button>
+      </div>
   </section>
 
   <div class = 'actors'>

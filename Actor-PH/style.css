@@ -1,3 +1,15 @@
+@font-face{
+  font-family: 'Poppins';
+  src: url('Pictures/Poppins-Regular.ttf');
+  font-style: normal;
+}
+
+@font-face{
+  font-family: 'Poppins-Bold';
+  src: url('Pictures/Poppins-Bold.ttf');
+  font-style: normal;
+}
+
 *{
   padding: 0;
   margin: 0;
@@ -8,16 +20,26 @@ html{
   height: 200vh;
 }
 
-body { 
-  background-image: url("Pictures/download.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: center;
+body {
+  margin: 0;
+  /* min-height: 100vh;
+  position: relative; */
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;  
+  background: url("Pictures/download.jpg") no-repeat center center / cover;
+  filter: grayscale(70%);
+  z-index: -1; 
 }
 
 span{
-  margin-right: -5px;
+  margin-right: -8px;
 }
 
 .a{
@@ -35,26 +57,27 @@ span{
 nav {
   background-color: rgba(0, 0, 0, 0.5);
   color:white;
-  padding: 15px 20px;
+  padding: 15px 40px;
   backdrop-filter: blur(5px);
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: sticky;
+  top: 0;
 }
 
 nav ul {
   list-style: none;   
   display: flex;     
-  gap: 20px;          
+  gap: 50px;        
+  font-size: 0.9rem;
+  font-weight: 100;
 }
 
 nav h1 {
   font-size: 30px;
-}
-
-nav ul {
-  display: flex;
-  gap: 20px;
+  text-shadow: -4px 4px 0px rgb(0, 0, 0);
+  font-family: 'Poppins-Bold';
 }
 
 nav a {
@@ -69,13 +92,17 @@ nav div{
 }
 
 nav button{
-  margin-left: 20px;
-  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  color: white;
-  background-color: black;
-  border:2px solid red;
-  padding: 10px 15px;
+  margin-left: 50px;
+  font-family: 'Poppins';  color: white;
+  background-color: red;
+  border: none;
+  padding: 5px 25px;
   cursor: pointer;
+}
+
+nav button::before{
+  position: relative;
+  background-image: linear-gradient(90deg,  red 0%, gold 65%, blue 100%);
 }
 
 section,
@@ -92,28 +119,43 @@ footer{
   color: rgb(255, 248, 248);
   text-align: center;
   padding: 100px 20px;
+  font-family:'Poppins';
+  height: 65vh;
 }
 
 .hero h2 {
-  font-size: 36px;
+  font-family: 'Poppins-Bold';
+  font-size: 2.8em;
   margin-bottom: 10px;
+  font-weight: 900;
+  background-image:linear-gradient(90deg,  red 0%, gold 65%, blue 100%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .hero p {
   font-size: 18px;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
+  font-weight: 100;
 }
 
 .hero button {
   padding: 10px 20px;
-  margin: 5px;
+  margin-right: 20px;
   border: none;
-  background-color: #007BFF;
   color: white;
   font-size: 16px;
   cursor: pointer;
+  width: 15vw;
+  background-color: transparent;
+  background-image:linear-gradient(180deg,  transparent 50%, #007BFF 50%, #007BFF 100%);
+  background-size: 100% 200%;
+  background-position: top;
+  transition: 0.4s ease-out;
+  border: white 1px solid;
 }
 
 .hero button:hover {
-  background-color: #0056b3;
+  background-position: bottom;
+  border: #007BFF 1px solid;
 }
