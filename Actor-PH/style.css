@@ -1,13 +1,45 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html{
+  height: 200vh;
+}
 
 body { 
-    background-color: gainsboro;
+  background-image: url("Pictures/download.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+}
 
+span{
+  margin-right: -5px;
+}
+
+.a{
+  color:red;
+}
+
+.c{
+  color: blue;
+}
+
+.t{
+  color:gold;
 }
 
 nav {
-    background-color: black;
-    color:white;
-    padding: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color:white;
+  padding: 15px 20px;
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 nav ul {
@@ -16,29 +48,47 @@ nav ul {
   gap: 20px;          
 }
 
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
 nav h1 {
-  font-size: 24px;
+  font-size: 30px;
 }
 
 nav ul {
   display: flex;
-  gap: 15px;
+  gap: 20px;
 }
 
 nav a {
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   text-decoration: none;
   color: white;
-  font-weight: bold;
+}
+
+nav div{
+  display: flex;
+  align-items: center;
+}
+
+nav button{
+  margin-left: 20px;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  color: white;
+  background-color: black;
+  border:2px solid red;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+section,
+.actors{
+  background-color: gainsboro;
+}
+
+footer{
+  background-color: gainsboro;
 }
 
 .hero {
- background-image: url("Pictures/download.jpg"); no-repeat center center/cover;
+  background-color: transparent;
   color: rgb(255, 248, 248);
   text-align: center;
   padding: 100px 20px;
