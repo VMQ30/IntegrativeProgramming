@@ -409,8 +409,6 @@ section{
   height: 35vh;
 }
 
-
-
 .about-message{
   display: flex;
   flex-direction: column;
@@ -546,7 +544,71 @@ section{
   font-family: 'Poppins';
 }
 
+.actors{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 40px;
+}
 
+.actors h3{
+  font-family: 'Poppins-Bold';
+  font-size: 2em;
+  font-weight: 900;
+  text-shadow: -3px 3px 0 black;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.carousel{
+  display: flex;
+  gap: 20px;
+}
+
+.carousel div{
+  position: relative;
+  background-color: gainsboro;
+  height: 40vh;
+  width: 15vw;
+  border-radius: 10px;
+  transition: ease 0.3s;
+  padding: 5px 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+
+.carousel div:hover {
+  transform: scale(1.07);
+  z-index: 2;
+
+}
+
+.carousel:has(div:hover) div:not(:hover) {
+  filter: blur(1px);
+  opacity: 0.7;
+}
+
+.carousel div h4{
+  font-family: 'Poppins-Bold';
+  font-size: 1.5em;
+  font-weight: 900;
+  color: gainsboro;
+}
+
+.carousel div p{
+  font-family: 'Poppins';
+  color: white;
+}
+
+.carousel div:nth-child(odd){
+  background: url('Pictures/actor1.png') no-repeat center center / cover;
+}
+
+.carousel div:nth-child(even){
+  background: url('Pictures/actor2.png') no-repeat center center / cover;
+}
 
 
 
@@ -558,4 +620,6 @@ section{
 
 footer{
   background-color: gainsboro;
+  height: 30vh;
+  margin-top: 40px;
 }
