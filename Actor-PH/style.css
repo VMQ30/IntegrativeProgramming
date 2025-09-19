@@ -573,16 +573,32 @@ section{
   width: 15vw;
   border-radius: 10px;
   transition: ease 0.3s;
-  padding: 5px 10px;
   display: flex;
   flex-direction: column;
   justify-content: end;
+  z-index:0;
+}
+
+.carousel div::before{
+  transition: 0.2s ease;
+  transform: scaleY(0);
+  transform-origin: bottom;
+  position: absolute;
+  content: '';
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  border-radius: 10px;
+  background-image: linear-gradient(180deg, transparent 30%, black 100%);
 }
 
 .carousel div:hover {
   transform: scale(1.07);
   z-index: 2;
+}
 
+.carousel div:hover::before{
+  transform: scaleY(1);
 }
 
 .carousel:has(div:hover) div:not(:hover) {
@@ -595,11 +611,26 @@ section{
   font-size: 1.5em;
   font-weight: 900;
   color: gainsboro;
+  margin: 0 10px;
+  transform: translateY(100%);
+  opacity: 0;
+  transition: transform 0.5s ease;
 }
 
 .carousel div p{
+  margin: 0 10px;
+  margin-bottom: 10px;
   font-family: 'Poppins';
   color: white;
+  transform: translateY(100%);
+  opacity: 0;
+  transition: transform 0.5s ease;
+}
+
+.carousel div:hover h4,
+.carousel div:hover p {
+  transform: translateY(0);
+  opacity: 1; 
 }
 
 .carousel div:nth-child(odd){
