@@ -32,6 +32,36 @@
     <p>Browse thousands of verified actors. Post roles. Hire with ease.</p>
     <button>Browse Actors</button>
     <button>Post a Casting Call</button>
+
+    <div class = 'stats'>
+      <div>
+        <h2 class = 'first'>500+</h2>
+        <p>Verified Actors</p>
+      </div>
+
+      <div>
+        <h2 class = 'second'>25+</h2>
+        <p>Performance Specialties</p>
+      </div>
+
+      <div>
+        <h2 class = 'third'>1,000+</h2>
+        <p>Active Users</p>
+      </div>
+    </div>
+  </section>
+
+  <section class = 'about'>
+    <div class = 'about-title'>
+      <h2>About Us</h2>
+    </div>
+
+    <div class = 'about-message'>
+      <h3>We connect</h3>
+      <h3><em>talented actors with <span>unforgettable roles</span></em></h3>
+      <p>Our mission is to bridge the gap between performers and creators, making it easier to bring stories to life. We showcase a wide range of skills, experiences, and personalities so casting directors can find the perfect match, and actors can shine on stage or screen.</p>
+      <button class = 'about-button'>Learn More</button>
+    </div>
   </section>
 
   <section>
@@ -42,12 +72,13 @@
       <div class = 'filters'>
         <div>
           <p class = 'age'>Age: </p>
-          <input type = 'input' class = 'age-input'>
+          <input type = 'input' class = 'age-input' placeholder = 'Enter Age'>
         </div>
 
         <div>
           <p class = 'gender'>Gender: </p>
           <select class = 'gender-input'>
+            <option value="" disabled selected hidden>Select Gender</option>
             <option>Male</option>
             <option>Female</option>
             <option>Non-Binary</option>
@@ -57,6 +88,7 @@
         <div>
           <p class = 'skills'>Skills: </p>
           <select class = 'skills-input'>
+            <option value="" disabled selected hidden>Select Skill</option>
             <option>Singing</option>
             <option>Dancing</option>
             <option>Acting</option>
