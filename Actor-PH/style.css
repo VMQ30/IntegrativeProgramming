@@ -686,9 +686,113 @@ section{
 
 
 footer{
+  padding: 20px 8vw;
   background-color: gainsboro;
-  height: 30vh;
-  margin-top: 40px;
+  height: 25vh;
+  margin-top: 80px;
+  position: relative;
+}
+
+.legal{
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px;
+  border-top: 2px solid rgb(196, 196, 196);
+  width: 90%;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-container{
+  display: flex;
+  flex-direction: column;
+}
+
+footer div{
+  display: flex;
+  justify-content: space-between;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+.contact-us,
+.social-media{
+  display: flex;
+  flex-direction: column;
+}
+
+.social-media{
+  align-items: center;
+}
+
+.social-media div{
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+footer button{
+  margin-top: 20px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+footer h4{
+  font-family: 'Poppins-Bold';
+  font-size: 2em;
+}
+
+footer div p{
+  font-family: 'Poppins';
+}
+
+footer div h3{
+  font-size: 3em;
+  color: black;
+  font-family: 'Poppins-Bold';
+  text-shadow: 3px -3px 0px black;
+  background-image: linear-gradient(90deg,  var(--red) 50%, var(--yellow) 70%, var(--blue) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.footer-letter{
+  margin-right: -10px;
+}
+
+footer div .a,
+footer div .c,
+footer div .t{
+  background-color: black;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+footer div .a{
+  text-shadow: 3px -3px 0px var(--red);
+}
+
+footer div .c{
+  text-shadow: 3px -3px 0px var(--blue);
+}
+
+footer div .t{
+  text-shadow: 3px -3px 0px var(--yellow);
 }
 
 ::selection{
