@@ -561,9 +561,45 @@ section{
   margin-bottom: 10px;
 }
 
+.carousel-wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}
+
+.carousel-container{
+  display: flex;
+  position: relative;
+  width: 80vw;
+  justify-content: flex-start;
+  overflow: hidden;
+  align-items: center;
+}
+
+.carousel-wrapper button{
+  background: rgba(0,0,0,0.5);
+  border: none;
+  color: white;
+  font-size: 2em;
+  padding: 5px 10px;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 5px;
+  transition: 0.3s ease;
+  box-shadow: 2px 2px 0 rgba(0,0,0,0.8);
+}
+
+.carousel-wrapper button:hover{
+  background: rgba(0,0,0,0.8);
+  box-shadow: 2px 2px 0 black;
+}
+
 .carousel{
   display: flex;
   gap: 20px;
+  transition: transform 0.6s ease;
 }
 
 .carousel div{
@@ -653,4 +689,9 @@ footer{
   background-color: gainsboro;
   height: 30vh;
   margin-top: 40px;
+}
+
+::selection{
+  background-color: #ff1b69;
+  color: white;
 }
