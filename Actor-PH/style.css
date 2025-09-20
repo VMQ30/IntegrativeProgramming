@@ -64,7 +64,7 @@ nav {
   align-items: center;
   position: sticky;
   top: 0;
-  z-index: 5;
+  z-index: 50;
 }
 
 nav ul {
@@ -655,7 +655,7 @@ section{
 
 .carousel div p{
   margin: 0 10px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   font-family: 'Poppins';
   color: white;
   transform: translateY(100%);
@@ -748,6 +748,63 @@ footer button{
   height: 40px;
   border-radius: 50%;
   cursor: pointer;
+  background-color: transparent;
+  padding: 7px;
+  position: relative;
+  transition: 0.3s ease;
+  border: none;
+  background-color: black;
+}
+
+footer button:hover{
+  background-color: var(--accent-color);
+  transform: translateY(-10%);
+  box-shadow: 0 5px 7px rgb(0, 0, 0, 0.3)
+}
+
+footer button::before{
+  transition: 200ms cubic-bezier(.42, 0, .44, 1.68);
+  position: absolute;
+  content: attr(data-social);
+  width: 250%;
+  height: 100%;
+  background-color: var(--accent-color);
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-200%) rotate(20deg);
+  border-radius: 25px;
+  color: white;               
+  font-size: 1em;
+  font-family: 'Poppins';
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+}
+
+footer button::after{
+  transition: 200ms cubic-bezier(.42, 0, .44, 1.68);
+  position: absolute;
+  content: '';
+  background-color: transparent;
+  left: 50%;
+  top: 50%;
+  width: 0; 
+  height: 0; 
+  transform: translateY(-400%) translateX(-50%) rotate(20deg);
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 10px solid var(--accent-color);
+  opacity: 0;
+}
+
+footer button:hover::before{
+  opacity: 1;
+  transform: translateX(-50%) translateY(-170%) rotate(0);
+}
+footer button:hover::after{
+  opacity: 1; 
+  transform: translateY(-300%) translateX(-50%) rotate(0);
 }
 
 footer h4{
