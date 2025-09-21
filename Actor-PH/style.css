@@ -187,6 +187,9 @@ nav button:hover::after,
   padding: 100px 20px;
   font-family:'Poppins';
   height: 65vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .hero h2 {
@@ -851,6 +854,111 @@ footer div .c{
 footer div .t{
   text-shadow: 3px -3px 0px var(--yellow);
 }
+
+.infinite-scroll{
+  margin-top: 100px;
+  margin-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(0, 0, 0, 0.75);
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.infinite-scroll h3{
+  font-size: 5em;
+  font-family: 'Poppins-Bold';
+  color: white;
+  background-image:linear-gradient(90deg,  var(--red) 0%, var(--yellow) 50%, var(--blue) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.infinite-carousel-wrapper{
+  width: 100%;
+  padding: 10px 0;
+  background-color: transparent;
+}
+
+.infinite-carousel-container{
+  margin-top: 20px;
+  width: 100%;
+  background-color: transparent;
+  background-image:linear-gradient(90deg,  var(--red) 0%, var(--yellow) 50%, var(--blue) 100%);
+}
+
+.infinite-carousel{
+  height: 10vh;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  background-color: transparent;
+  overflow-x: none;
+  
+}
+
+.skill-cards{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 0 0 auto;
+  background-color: rgba(0,0,0,0.8);
+  width: 20vw;
+  height: 100%;
+  border-radius: 5px;
+}
+
+.skill-cards h4 {
+  text-align: center;
+  margin: 0;
+  font-size: 2em;
+  font-family: 'Poppins-Bold';
+  font-weight: 900;
+  color: white;
+  background-image:linear-gradient(90deg,  var(--red) 0%, var(--yellow) 50%, var(--blue) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.scroller{
+  max-width: 100%;
+}
+
+.scroller[data-animated = true]{
+  overflow: hidden;
+  mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+  -webkit-mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+}
+
+.scroller[data-animated = true] .scroller-inner{
+  flex-wrap: nowrap;
+  animation: scroll 20s linear infinite;
+}
+
+.scroller-inner{
+  /* padding-block: 1rem; */
+  flex-wrap: wrap;
+}
+
+@keyframes scroll{
+  to{
+    transform: translate(100%);
+  }
+}
+
+
+
+
+
+
 
 ::selection{
   background-color: #ff1b69;

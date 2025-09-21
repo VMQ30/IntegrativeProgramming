@@ -1,5 +1,6 @@
 (function(){
     featuredActorsButton();
+    infiniteScroll();
 })()
 
 function featuredActorsButton(){
@@ -25,4 +26,15 @@ function featuredActorsButton(){
             carousel.style.transform = `translateX(${-slideWidth * index}px)`;
         }
     });
+}
+
+function infiniteScroll(){
+    if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+        addInfiniteScrollerAnimation();
+    }
+}
+
+function addInfiniteScrollerAnimation(){
+    const scroller = document.querySelector('.scroller')
+    scroller.setAttribute('data-animated', true)
 }
