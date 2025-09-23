@@ -117,30 +117,35 @@ main{
     position: relative;
     overflow: hidden;
 }
+
 .panel{
     position: absolute;
-    width: 100%;
+    width: 50%;
     height: 100%;
     top: 0;
     right: 0;
     background-image:linear-gradient(90deg,  var(--red) 0%, var(--yellow) 50%, var(--blue) 100%);
     z-index: 5;
-    transition: 1s ease;
+    transition: 1s ease-in-out;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    transform: translateX(-50%);
+    overflow: hidden;
+    z-index: 1000;
 }
 
 .panel div{
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 50%;
+  width: 50vw;
+  height: 50vh;
   text-align: center;
   padding: 20px;
-  transition: opacity 0.3s linear 0.2s, transform 0.5s ease;
+  transition: 1s ease-in-out;
+  flex-shrink: 0;
 }
 
 .panel div h2{
@@ -157,15 +162,13 @@ main{
 }
 
 .change-panel{
-  transform: translateX(50%);
+  transform: translateX(-100%);
 }
 
 .move-right{
-  transform: translateX(-50%) scale(0.9);
-  opacity: 0;
+  transform: translateX(100%);
 }
 
 .move-left{
-  transform: translateX(50%) scale(0.9);
-  opacity: 0;
+  transform: translateX(-100%);
 }
