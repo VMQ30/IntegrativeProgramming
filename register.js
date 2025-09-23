@@ -16,6 +16,8 @@ function movePanel(){
     signUp.addEventListener('click', () => {
         panel.classList.add('change-panel')
         signUpPanel.classList.add('move-left')
+        signUpPanel.style.opacity = '0'
+        signInPanel.style.opacity = '1'
         signInPanel.classList.add('move-left')
     })
 
@@ -23,5 +25,7 @@ function movePanel(){
         panel.classList.remove('change-panel')
         signUpPanel.classList.remove('move-left')
         signInPanel.classList.remove('move-left')
+        signUpPanel.style.opacity = '1'
+        signInPanel.style.opacity = '0'
     })
 }

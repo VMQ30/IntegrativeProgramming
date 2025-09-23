@@ -72,42 +72,6 @@ main {
     width: 50%;
 }
 
-.sign-up{
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-}
-
-.sign-up h2{
-    text-align: center;
-}
-
-.sign-up label{
-    display: none;
-}
-
-.sign-up input{
-    margin-top: 20px;
-}
-
-.input-wrapper{
-    position: relative;
-}
-.input-wrapper::before{
-    position: absolute;
-    content: attr(data-label);
-    color: #2196f3;
-}
-
-.name{
-    display: flex;
-}
-
-form{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
 .sign-in{
     background-color: var(--secondary);
     position: relative;
@@ -119,19 +83,20 @@ main{
 }
 
 .panel{
-    position: absolute;
-    width: 50%;
-    height: 100%;
-    top: 0;
-    right: 0;
-    background-image:linear-gradient(90deg,  var(--red) 0%, var(--yellow) 50%, var(--blue) 100%);
-    z-index: 5;
-    transition: 1s ease-in-out;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    overflow: hidden;
-    z-index: 1000;
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  background-image:linear-gradient(90deg,  var(--red) 0%, var(--yellow) 50%, var(--blue) 100%);
+  z-index: 5;
+  transition: 1s ease-in-out;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  overflow: hidden;
+  z-index: 1000;
+  opacity: 0;
 }
 
 .panel div{
@@ -171,4 +136,106 @@ main{
 
 .move-left{
   transform: translateX(-100%);
+}
+
+
+
+
+.sign-up,
+.sign-in{
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.sign-up h2,
+.sign-in h2{
+  text-align: center;
+  font-family: 'Poppins-Bold';
+  font-weight: 900;
+  font-size: 3.5em;
+  margin: 10px 0;
+}
+
+.sign-up p,
+.sign-in p{
+  font-family: 'Poppins';
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
+
+.sign-up label,
+.sign-in label{
+  display: none;
+}
+
+.sign-up input,
+.sign-in input{
+  margin-top: 20px;
+}
+
+.textbox{
+  border: none;
+  padding: 10px 0;
+  /* background-color: transparent; */
+  position: relative;
+  outline: none;
+}
+
+.input-wrapper{
+  position: relative;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.input-wrapper::before{
+  position: absolute;
+  content: attr(data-label);
+  color: #2196f3;
+  bottom: 0;
+  left:0;
+  transform: translateY(-20%);
+  z-index:50;
+  font-family: 'Poppins';
+  font-size: 1em;
+  
+}
+
+.input-wrapper::after{
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 2px;
+  background-color: var(--blue);
+  left:0;
+  bottom:0;
+}
+
+.name{
+  display: flex;
+  width: 100%;
+  gap: 20px;
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sign-up-form,
+.sign-in-form{
+  width: 70%;
+  justify-content: center;
+  align-items: center;
+}
+
+input{
+  width: 100%;
+}
+
+.submit-button{
+  width: 50%;
 }
