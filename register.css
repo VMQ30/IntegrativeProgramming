@@ -88,15 +88,18 @@ main{
   height: 100%;
   top: 0;
   right: 0;
-  background-image:linear-gradient(90deg,  var(--red) 0%, var(--yellow) 50%, var(--blue) 100%);
   z-index: 5;
-  transition: 1s ease-in-out;
+  transition: transform 1s ease-in-out;
   display: flex;
   justify-content: space-around;
   align-items: center;
   overflow: hidden;
   z-index: 1000;
-  opacity: 0;
+  background-image: url('Pictures/image.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.7);
 }
 
 .panel div{
@@ -109,7 +112,7 @@ main{
   height: 50vh;
   text-align: center;
   padding: 20px;
-  transition: 1s ease-in-out;
+  transition: transform 1s ease-in-out;
   flex-shrink: 0;
 }
 
@@ -117,6 +120,12 @@ main{
   font-family: 'Poppins-Bold';
   font-size: 5em;
   line-height: 1em;
+  color: white;
+  background-image:linear-gradient(90deg,  var(--red) 0%, var(--yellow) 50%, var(--blue) 100%);
+  text-shadow: 3px -3px 0 white;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .panel div p{
@@ -124,6 +133,47 @@ main{
   font-size: 1.3em;
   margin-top: 20px;
   margin-bottom: 20px;
+  color: white;
+  text-shadow: 1px 1px 0 black,
+  -1px -1px 0 black,
+  1px -1px 0 black,
+  -1px 1px 0 black;
+}
+
+.panel div button{
+  font-family: 'Poppins';
+  font-family: 1em;
+  font-weight: 500;
+  padding: 5px 20px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border: 2px solid white;
+  color: white;
+  position: relative;
+  transition: 0.4s ease-in-out;
+  cursor: pointer;
+  background-color: transparent;
+  background-size: 200% 100%;
+  transition: 0.4s ease-out;
+}
+
+.panel .sign-up-panel button{
+  background-image:linear-gradient(90deg,  transparent 50%, #007BFF 50%, #007BFF 100%);
+  background-position: left;
+}
+
+.panel .sign-in-panel button{
+  background-image:linear-gradient(90deg,  #007BFF 50%, transparent 50%, transparent 100%);
+  background-position: right;
+}
+
+.panel .sign-up-panel button:hover{
+  background-position: right;
+  border: #007BFF 2px solid;
+}
+
+.panel .sign-in-panel button:hover{
+  background-position: left;
+  border: #007BFF 2px solid;
 }
 
 .change-panel{
@@ -157,6 +207,11 @@ main{
   font-weight: 900;
   font-size: 3.5em;
   margin: 10px 0;
+  background-image:linear-gradient(90deg,  var(--red) 0%, var(--yellow) 50%, var(--blue) 100%);
+  text-shadow: 3px -3px 0 black;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .sign-up p,
@@ -179,7 +234,7 @@ main{
 .textbox{
   border: none;
   padding: 10px 0;
-  /* background-color: transparent; */
+  background-color: transparent;
   position: relative;
   outline: none;
 }
@@ -193,24 +248,61 @@ main{
 .input-wrapper::before{
   position: absolute;
   content: attr(data-label);
-  color: #2196f3;
+  color: rgba(0, 0, 0, 0.5);
   bottom: 0;
   left:0;
   transform: translateY(-20%);
   z-index:50;
   font-family: 'Poppins';
   font-size: 1em;
-  
+  pointer-events: none;
+  transition: 0.4s ease-in-out;
+  text-transform: uppercase;
 }
 
 .input-wrapper::after{
+  pointer-events: none;
   position: absolute;
   content: '';
   width: 100%;
-  height: 2px;
+  height: 2.5px;
   background-color: var(--blue);
   left:0;
   bottom:0;
+  overflow: hidden;
+  background-size: 200% 100%;
+}
+
+.input-wrapper:has(input:focus)::after {
+  background: linear-gradient(
+    90deg,
+    var(--red) 0%,
+    var(--blue) 33%,
+    var(--yellow) 66%,
+    var(--red) 100%
+  );
+  background-size: 300% 100%;  
+  animation: gradient-move 10s linear infinite;
+}
+
+@keyframes gradient-move {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: -300% 50%;
+  }
+}
+
+.input-wrapper:has(input:focus)::before{
+  color: var(--blue);
+  transform: translateY(-170%);
+  font-size: 0.9em;
+}
+
+.has-text::before{
+  transform: translateY(-170%);
+  font-size: 0.9em;
 }
 
 .name{
@@ -234,8 +326,23 @@ form{
 
 input{
   width: 100%;
+  font-size: 1em;
+  font-family: 'Poppins';
 }
 
 .submit-button{
-  width: 50%;
+  width: 25%;
+  padding: 8px;
+  background-color: var(--blue);
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s ease;
+  outline: 2px white;
+}
+
+.submit-button:hover,
+.submit-button:focus{
+  transform: translateY(-10%);
+  box-shadow: 0 7px 10px rgba(0, 0, 0, 0.3);
 }

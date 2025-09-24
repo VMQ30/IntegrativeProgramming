@@ -1,6 +1,19 @@
 (function(){
     movePanel()
+    checkTextBox()
 })()
+
+function checkTextBox(){
+    document.querySelectorAll('.textbox').forEach(input => {
+    input.addEventListener('input', () => {
+        if (input.value.trim() !== "") {
+        input.parentElement.classList.add('has-text');
+        } else {
+        input.parentElement.classList.remove('has-text');
+        }
+    });
+    });
+}
 
 function movePanel(){
     const panel = document.querySelector('.panel')
