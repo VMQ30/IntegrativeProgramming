@@ -1,7 +1,15 @@
 (function(){
+    signInButton();
     featuredActorsButton();
     infiniteScroll();
 })()
+
+function signInButton(){
+    const signInButton = document.querySelector('.sign-in')
+    signInButton.addEventListener('click', () => {
+        window.location.href = 'register.html'
+    })
+}
 
 function featuredActorsButton(){
     const carousel = document.querySelector('.carousel');
