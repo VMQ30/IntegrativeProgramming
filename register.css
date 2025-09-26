@@ -24,7 +24,7 @@
 }
 
 span{
-  margin-right: -5px;
+  margin-right: -7px;
 }
 
 .a{
@@ -50,9 +50,11 @@ nav {
   align-items: center;
 }
 
-nav h1 {
-  font-size: 30px;
+nav a {
+  font-size: 2em;
   font-family: 'Poppins-Bold';
+  color: white;
+  text-decoration-line:none ;
 }
 
 html, body {
