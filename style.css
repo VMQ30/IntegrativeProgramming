@@ -696,14 +696,6 @@ section{
   background: url('Pictures/actor2.png') no-repeat center center / cover;
 }
 
-
-
-
-
-
-
-
-
 footer{
   padding: 20px 8vw;
   background-color: var(--secondary);
@@ -734,16 +726,6 @@ footer div{
   justify-content: space-between;
 
 }
-
-
-
-
-
-
-
-
-
-
 
 .contact-us,
 .social-media{
