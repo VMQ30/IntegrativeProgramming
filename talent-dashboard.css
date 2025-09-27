@@ -362,6 +362,18 @@ main{
     transition: 0.3s ease;
 }
 
+.invite{
+    border-color: var(--red);
+}
+
+.applications{
+    border-color: var(--blue);
+}
+
+.message-inbox{
+    border-color: var(--yellow);
+}
+
 .invite:hover,
 .applications:hover,
 .message-inbox:hover{
@@ -374,17 +386,20 @@ main{
     padding: 20px 20px;
     font-family: 'Poppins-Bold';
     font-size: 1.5em;
-    border-bottom: 2px solid rgba(0, 0, 0, 0.3)
+    border-bottom: 3px solid rgba(0, 0, 0, 0.3)
 }
 
 .invite-header{
     color: var(--red);
+    border-color: var(--red);
 }
 .application-header{
     color: var(--blue);   
+    border-color: var(--blue);
 }
 .message-header{
     color: var(--yellow);
+    border-color: var(--yellow);
 }
 
 .invite-content,
@@ -466,4 +481,96 @@ main{
     transform: translateY(-10%);
     background-color: var(--blue);
     color: white;
+}
+
+.chat-button{
+    background-color: var(--red);
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 999;
+    border-radius: 50px;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.chatbot-container {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  width: 300px;
+  height: 400px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  display: none;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 1000;
+}
+
+.chatbot-header {
+  background: var(--red);
+  color: white;
+  padding: 1em;
+  font-family: 'Poppins';
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chatbot-header button{
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.chatbot-messages {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+  font-family: 'Poppins';
+  font-size: 1em;
+  line-height: 1.5em;
+}
+
+.chatbot-input {
+  display: flex;
+  border-top: 1px solid #ddd;
+}
+
+.chatbot-input input {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  outline: none;
+  font-size: 0.8em;
+  font-family: 'Poppins';
+}
+
+.chatbot-input button {
+  background: var(--red);
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 1em;
+  font-family: 'Poppins';
 }

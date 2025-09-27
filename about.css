@@ -97,9 +97,16 @@ nav h1 {
 }
 
 nav a {
-    font-family: 'Trebuchet MS', Arial, sans-serif;
+    font-family: 'Poppins';
     text-decoration: none;
     color: white;
+}
+
+nav .logo{
+  font-size: 2em;
+  font-family: 'Poppins-Bold';
+  color: white;
+  text-decoration-line:none ;
 }
 
 nav div {
@@ -169,6 +176,20 @@ nav button:hover::after,
     max-width: 800px;
     border-radius: 15px;
     text-align: center;
+    font-family: 'Poppins';
+    transition: ease 0.3s;
+}
+
+.main-text:hover,
+.about-vision:hover,
+.about-mission:hover{
+    transform: scale(1.05);
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3)
+}
+
+.about-vision,
+.about-mission{
+    transition: 0.3s ease;
 }
 
 .slider {
