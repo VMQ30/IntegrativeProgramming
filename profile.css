@@ -298,7 +298,7 @@ footer div .t{
 
 
 main{
-    margin: 5vh 10vw;
+    margin: 5vh 20vw;
 }
 
 .header{
@@ -320,257 +320,208 @@ main{
 .header p{
     font-family: 'Poppins';
     font-size: 1.5em;
-    margin-bottom: 10px;
+    margin-bottom: 40px;
     
 }
 
-.main-dashboard{
-    margin-top: 20px;
-    display: flex;
-    align-items:flex-start;
-}
-
-.important{
-    padding: 1vh 0;
-}
-
-.important button{
-    border-radius: 20px;
-    border: none;
-    padding: 10px 20px;
-    font-family: 'Poppins';
-    font-size: 1em;
-    margin-right: 20px;
-    cursor: pointer;
-    transition: ease 0.3s;
-}
-
-.important button:hover{
-    background-color: var(--red);
-    color: white;
-    box-shadow: 0 5px 10px rgb(0, 0, 0, 0.3);
-    transform: scale(1.05);
-}
-
-.invite,
-.applications,
-.message-inbox{
-    width: 100%;
-    margin-bottom: 3vh;
-    border: 2px solid rgb(0, 0, 0, 0.3);
-    border-radius: 22px;
-    transition: 0.3s ease;
-}
-
-.invite{
-    border-color: var(--red);
-}
-
-.applications{
-    border-color: var(--blue);
-}
-
-.message-inbox{
-    border-color: var(--yellow);
-}
-
-.invite:hover,
-.applications:hover,
-.message-inbox:hover{
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
-}
-
-.invite-header,
-.application-header,
-.message-header{
-    padding: 20px 20px;
-    font-family: 'Poppins-Bold';
-    font-size: 1.5em;
-    border-bottom: 3px solid rgba(0, 0, 0, 0.3)
-}
-
-.invite-header{
-    color: var(--red);
-    border-color: var(--red);
-}
-.application-header{
-    color: var(--blue);   
-    border-color: var(--blue);
-}
-.message-header{
-    color: var(--yellow);
-    border-color: var(--yellow);
-}
-
-.invite-content,
-.application-content,
-.message-content{
-    padding: 20px 20px;
-    font-family: 'Poppins';
-    font-size: 1em;
-    background: var(--secondary);
-    border-radius: 0 0 20px 20px;
-    color: rgba(0, 0, 0, 0.5);
-    font-weight: 500;
-}
-
-.invite-content{
-    background-color: #ff87b1;
-}
-.application-content{
-    background-color: #8eccff;   
-}
-.message-content{
-    background-color: rgb(255, 255, 185);
-}
-
-.notifs{
-  width: 200%;
-}
-
-.side-tab{
-    width: 60%;
-}
-
-.invite-profile{
-    margin-left: 40px;
-    background-color:rgb(237, 237, 237);
-    border-radius: 20px;
-    padding: 20px;
-    display: flex;
-    justify-content: center;
+.title{
     flex-direction: column;
+    display: flex;
     align-items: center;
-    transition: 0.3s ease;
-    margin-bottom: 20px;
+    justify-content: center;
+    padding-bottom: 40px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.2)
 }
 
-.invite-profile:hover{
-    transform: scale(1.05);
-    box-shadow: 0 5px 10px rgb(0, 0, 0, 0.3);
-}
-
-.invite-profile h3{
-    line-height: 1em;
-    color: var(--blue);
-    font-size: 1.5em;
+.title h3{
     font-family: 'Poppins-Bold';
-    margin-bottom: 10px;
+    font-size: 3em;
 }
 
-.invite-profile p{
-    font-size: 1em;
+.title p{
     font-family: 'Poppins';
+    font-size: 1.5em;
 }
 
-.profile-button{
-    background-color: transparent;
-    cursor: pointer;
-    border: 2px solid var(--blue);
-    color: var(--blue);
+.info{
+    padding-top: 40px;
+}
+
+.info h4{
+    font-family: 'Poppins';
+    font-weight: 600;
+    font-size: 1.5em;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.info p{
+    font-family: 'Poppins';
+    font-size: 1em;
+}
+
+.info div{
+    margin-bottom: 40px;
+}
+
+.info input{
     font-size: 1em;
     font-family: 'Poppins';
     padding: 5px 10px;
-    border-radius: 10px;
-    border-bottom: 4px solid var(--blue);
+    width: 100%;
     margin-top: 10px;
-    transition: ease 0.3s;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    outline: none;
+    transition: 0.2s ease;
+    caret-color: var(--blue);
 }
 
-.profile-button:hover{
-    transform: translateY(-10%);
+.info input:focus{
+    border: 2px solid var(--blue);
+}
+
+.info button{
+    background-color: var(--secondary);
+    font-size: 1em;
+    font-family: 'Poppins';
+    padding: 10px 30px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.info button:hover{
     background-color: var(--blue);
+    transform: scale(1.05) translateY(-5%);
+    box-shadow: 0 5px 10px rgb(0, 0, 0, 0.2);
     color: white;
 }
 
-.chat-button{
-    background-color: var(--red);
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 999;
-    border-radius: 50px;
-    width: 70px;
-    height: 70px;
+.button{
     display: flex;
+    justify-self: center;
+    margin-bottom: 40px;
+}
+
+.button button{
+    padding: 10px 40px;
+    font-size: 1em;
+    font-family: 'Poppins-Bold';
+    margin-right: 20px;
+    border-radius: 10px;
+    transition: padding 0.3s ease;
+    cursor: pointer;
+}
+
+.button button:nth-child(1){
+    background-color: var(--secondary);
+}
+
+.button button:nth-child(1):hover{
+  border: 2px black solid;
+  border-bottom: 4px solid black;
+}
+
+.button button:nth-child(2){
+    background-color: var(--red);
+    color: white;
+    display: flex;
+    position: relative;
+}
+
+.button button:nth-child(2)::after{
+  content: '⇾';
+  position: absolute;
+  opacity: 0;  
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0px;
+  transition: 0.5s;
+  font-size: 1.5em;
+}
+
+.button button:nth-child(2):hover{
+  padding-right: 50px;
+  border: 2px black solid;
+  border-bottom: 4px solid black;
+}
+
+.button button:nth-child(2):hover::after{
+  opacity: 1;
+  right: 20px;
+}
+
+.confirmation-container{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    position: fixed;
+    top:0;
+    left:0;
+    backdrop-filter: blur(4px);
+    display: none;
+}
+
+.confirmation{    
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    background-color: #ececec;
+    padding: 20px 40px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    cursor: pointer;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-.chatbot-container {
-  position: fixed;
-  bottom: 90px;
-  right: 20px;
-  width: 300px;
-  height: 400px;
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-  display: none;
-  flex-direction: column;
-  overflow: hidden;
-  z-index: 1000;
+.confirmation h3{
+    font-size: 2em;
+    font-family: 'Poppins-Bold';
+    margin: 20px 0;
+    justify-self: center;
 }
 
-.chatbot-header {
-  background: var(--red);
-  color: white;
-  padding: 1em;
-  font-family: 'Poppins';
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.chatbot-header button{
-    background-color: transparent;
-    border: none;
-    color: white;
+.confirmation p{
     font-size: 1em;
+    font-family: 'Poppins';
+}
+
+.confirmation-box{
+    background-color: var(--secondary);
+    margin-top: 20px;
+    display: flex;
+    align-items: first baseline;
+    gap: 20px;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.confirm-button{
+    align-self: center;
+    font-family: 'Poppins-Bold';
+    font-size: 1em;
+    margin: auto;
+    padding: 10px 40px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    color: rgba(0, 0, 0, 0.5);
     cursor: pointer;
 }
 
-.chatbot-messages {
-  flex: 1;
-  padding: 10px;
-  overflow-y: auto;
-  font-family: 'Poppins';
-  font-size: 1em;
-  line-height: 1.5em;
+.confirm-button:hover{
+    background-color: rgba(0, 0, 0, 0.1);
 }
 
-.chatbot-input {
-  display: flex;
-  border-top: 1px solid #ddd;
-}
 
-.chatbot-input input {
-  flex: 1;
-  padding: 10px;
-  border: none;
-  outline: none;
-  font-size: 0.8em;
-  font-family: 'Poppins';
-}
 
-.chatbot-input button {
-  background: var(--red);
-  border: none;
-  color: white;
-  padding: 10px 15px;
-  cursor: pointer;
-  font-size: 1em;
-  font-family: 'Poppins';
-}
+
+
+
+
+

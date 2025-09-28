@@ -1,3 +1,7 @@
+(function(){
+    signInButton();
+})()
+
 const slides = document.querySelectorAll(".slides img");
 let slideIndex = 0;
 let intervalId = null;
@@ -5,6 +9,13 @@ let intervalId = null;
 //initializeSlider();
 document.addEventListener("DOMContentLoaded", initializeSlider);
 
+
+function signInButton(){
+    const signInButton = document.querySelector('.sign-in')
+    signInButton.addEventListener('click', () => {
+        window.location.href = 'register.html'
+    })
+}
 
 function initializeSlider(){
 

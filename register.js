@@ -1,6 +1,7 @@
 (function(){
     movePanel()
     checkTextBox()
+    signIn()
 })()
 
 function checkTextBox(){
@@ -41,4 +42,20 @@ function movePanel(){
         signUpPanel.style.opacity = '1'
         signInPanel.style.opacity = '0'
     })
+}
+
+function signIn(){
+    const form = document.querySelector("form");
+    const password = document.querySelector('.sign-in-password')
+    const confirmPass = document.querySelector('.sign-in-confirm-password')
+    form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        if(password.value !== confirmPass.value){
+            alert('Incorrect Email or Password')
+        }
+        else{
+            window.location.href = "talent-dashboard.html";
+        }
+        
+    });
 }

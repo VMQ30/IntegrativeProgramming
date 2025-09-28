@@ -1,65 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="about.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ACTOR.PH</title>
+	<link rel="stylesheet" href ="profile.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>ACTOR.PH</title>
 </head>
 
 <body>
     <nav>
-        <a href = 'index.html' class = 'logo'>
+		<h1>
 			<span class = 'a'>A</span>
 			<span class = 'c'>C</span>
 			<span class = 't'>T</span>
 			OR.PH
-        </a>
+		</h1>
+		
+		<div>
+			<ul>
+				<li><a href="#">Applications</a></li>
+				<li><a href="#">Casting Calls</a></li>
+				<li><a href="#">Messages</a></li>
+			</ul>
 
-        <div>
-            <ul>
-                <li><a href="#">Browse Actors</a></li>
-                <li><a href="#">Casting Calls</a></li>
-                <li><a href="#">About</a></li>
-            </ul>
-            <button class="sign-in">Sign In</button>
+			<button class = sign-in>Profile</button>
+		</div>
+	</nav>
+
+    <main>
+        <div class = 'title'>
+            <h3>Tell us a little about yourself</h3>
+            <p>This information will help you start looking for jobs</p>
         </div>
-    </nav>
 
-    <section class="about">
-        <h3>About Us</h3>
-        <p class="highlighted-text main-text">
-            ACTOR, built for actors and performers who want to showcase their talent and connect with opportunities. Whether starting out or already building your career, our goal is to make it easier for you to get discovered, land roles, and grow in the industry. By giving actors a space to share their portfolios and connect with casting calls, we bridge the gap between performers and creators.
-        </p>
-    </section>
+        <div class = 'info'>
+            <div class = 'name'>
+                <h4>Stage Name</h4>
+                <p>This is the name you want to be known by publicly - onstage, on screen, or online</p>
+                <input type = 'textbox' class = 'stage-name' placeholder="Type your name...">
+            </div>
 
-    <div class="slider">
-        <div class="slides">
-            <img class="slide displaySlide" src="Pictures/image1.jpg" alt="Image #1">
-            <img class="slide" src="Pictures/image2.jpg" alt="Image #2">
-            <img class="slide" src="Pictures/image3.jpg" alt="Image #3">
-            <img class="slide" src="Pictures/image4.jpg" alt="Image #4">
-            <img class="slide" src="Pictures/image5.jpg" alt="Image #5">
+            <div class = 'gender'>
+                <h4>What is your gender identity?</h4>
+                <div class = 'options'>
+                    <button class = 'option-button'>Male</button>
+                    <button class = 'option-button'>Female</button>
+                    <button class = 'option-button'>Others</button>
+                    <button class = 'option-button'>Prefer Not to Say</button>
+                </div>
+            </div>
+
+            <div class = 'ethnicity'>
+                <h4>Select your Ethnicities</h4>
+                <div class = 'options'>
+                    <button class = 'option-button'>Asian</button>
+                    <button class = 'option-button'>Black / African Descent</button>
+                    <button class = 'option-button'>Multiracial</button>
+                    <button class = 'option-button'>Latino / Hispanic</button>
+                    <button class = 'option-button'>Middle Eastern</button>
+                    <button class = 'option-button'>South Asian</button>
+                    <button class = 'option-button'>Southeast Asian</button>
+                    <button class = 'option-button'>White / European Descent</button>
+                </div>
+            </div>
+
+            <div class = 'age'>
+                <h4>What is your Age?</h4>
+                <input type = 'range' class = 'user-age' min="1" max="100" value="18">
+            </div>
+
+            <div class = 'location'>
+                <h4>Location</h4>
+                <input type = 'text' class = 'user-location' placeholder="Type your location...">
+            </div>
         </div>
-        <button class="prev" onclick="prevSlide()">&#10094;</button>
-        <button class="next" onclick="nextSlide()">&#10095;</button>
 
-        <div class="mission-vision">
-            <section class="about-mission">
-                <h3>Our Mission</h3>
-                <p class="highlighted-text">
-                    Our mission is to empower actors by providing a platform where they can display their skills, share their portfolios, and connect directly with casting directors, producers, and industry professionals. We aim to simplify the process of finding acting opportunities while helping creators discover the right talent.
-                </p>
-            </section>
-
-            <section class="about-vision">
-                <h3>Our Vision</h3>
-                <p class="highlighted-text">
-                    Our vision is to become the go-to hub for actors and creators worldwide a trusted space where talent meets opportunity. We see a future where every performer, regardless of background or experience, has equal access to opportunities that let them shine on stage or screen.
-                </p>
-            </section>
+        <div class = 'button'>
+            <button class = 'back'>Back</button>
+            <button class = 'next'>Next</button>
         </div>
-    </div>
+
+        <div class = 'confirmation-container'>
+            <div class = 'confirmation'>
+                <h3>Verify your Identity</h3>
+                <p>ACTor.PH does not allow the creation of user profiles for children under the age of 18 without their parent or legal guardian’s consent. By checking the box below, you hereby affirm that you are the parent or legal guardian of the child whose profile you’re creating.</p>
+
+                <div class = 'confirmation-box'>
+                    <input type = "checkbox" class = 'confirm-age'>
+                    <p>I certify that I am the parent or legal guardian of the child whose ACTor.PH profile I am creating, and I consent to the release of personally identifiable information of this child on ACTor.PH.</p>
+                </div>
+
+                <button class = 'confirm-button'>Next</button>
+            </div>
+        </div>
+    </main>
 
 	<footer>
 		<div class="footer-container">
@@ -83,7 +117,7 @@
 					<div>
 						<button class = 'facebook' data-social = 'Facebook' style = '--accent-color: #19478a'>
 							<svg viewBox="-5 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>facebook [#ffffff]</title> <desc>Created with Sketch.</desc> <defs> </defs> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="Dribbble-Light-Preview" transform="translate(-385.000000, -7399.000000)" fill="#ffffff"> <g id="icons" transform="translate(56.000000, 160.000000)"> <path d="M335.821282,7259 L335.821282,7250 L338.553693,7250 L339,7246 L335.821282,7246 L335.821282,7244.052 C335.821282,7243.022 335.847593,7242 337.286884,7242 L338.744689,7242 L338.744689,7239.14 C338.744689,7239.097 337.492497,7239 336.225687,7239 C333.580004,7239 331.923407,7240.657 331.923407,7243.7 L331.923407,7246 L329,7246 L329,7250 L331.923407,7250 L331.923407,7259 L335.821282,7259 Z" id="facebook-[#ffffff]"> </path> </g> </g> </g> </g></svg>	
-						</button>
+						</button>	
 						<button class = 'instagram' data-social = 'Instagram' style = '--accent-color: #dc2b7a'>
 							<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M12 18C15.3137 18 18 15.3137 18 12C18 8.68629 15.3137 6 12 6C8.68629 6 6 8.68629 6 12C6 15.3137 8.68629 18 12 18ZM12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z" fill="#ffffff"></path> <path d="M18 5C17.4477 5 17 5.44772 17 6C17 6.55228 17.4477 7 18 7C18.5523 7 19 6.55228 19 6C19 5.44772 18.5523 5 18 5Z" fill="#ffffff"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M1.65396 4.27606C1 5.55953 1 7.23969 1 10.6V13.4C1 16.7603 1 18.4405 1.65396 19.7239C2.2292 20.8529 3.14708 21.7708 4.27606 22.346C5.55953 23 7.23969 23 10.6 23H13.4C16.7603 23 18.4405 23 19.7239 22.346C20.8529 21.7708 21.7708 20.8529 22.346 19.7239C23 18.4405 23 16.7603 23 13.4V10.6C23 7.23969 23 5.55953 22.346 4.27606C21.7708 3.14708 20.8529 2.2292 19.7239 1.65396C18.4405 1 16.7603 1 13.4 1H10.6C7.23969 1 5.55953 1 4.27606 1.65396C3.14708 2.2292 2.2292 3.14708 1.65396 4.27606ZM13.4 3H10.6C8.88684 3 7.72225 3.00156 6.82208 3.0751C5.94524 3.14674 5.49684 3.27659 5.18404 3.43597C4.43139 3.81947 3.81947 4.43139 3.43597 5.18404C3.27659 5.49684 3.14674 5.94524 3.0751 6.82208C3.00156 7.72225 3 8.88684 3 10.6V13.4C3 15.1132 3.00156 16.2777 3.0751 17.1779C3.14674 18.0548 3.27659 18.5032 3.43597 18.816C3.81947 19.5686 4.43139 20.1805 5.18404 20.564C5.49684 20.7234 5.94524 20.8533 6.82208 20.9249C7.72225 20.9984 8.88684 21 10.6 21H13.4C15.1132 21 16.2777 20.9984 17.1779 20.9249C18.0548 20.8533 18.5032 20.7234 18.816 20.564C19.5686 20.1805 20.1805 19.5686 20.564 18.816C20.7234 18.5032 20.8533 18.0548 20.9249 17.1779C20.9984 16.2777 21 15.1132 21 13.4V10.6C21 8.88684 20.9984 7.72225 20.9249 6.82208C20.8533 5.94524 20.7234 5.49684 20.564 5.18404C20.1805 4.43139 19.5686 3.81947 18.816 3.43597C18.5032 3.27659 18.0548 3.14674 17.1779 3.0751C16.2777 3.00156 15.1132 3 13.4 3Z" fill="#ffffff"></path> </g></svg>
 						</button>
@@ -106,6 +140,5 @@
 		</div>
 	</footer>
 
-    <script src="about.js"></script>
+	<script src = 'profile.js'></script>
 </body>
-</html>
