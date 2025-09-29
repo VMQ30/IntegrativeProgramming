@@ -298,6 +298,7 @@ main{
     gap: 30px;
     background-color: var(--secondary);
     padding: 20px;
+    z-index: 1;
 }
 
 .actors-card{
@@ -308,11 +309,30 @@ main{
     display: flex;
     flex-direction: column;
     transition: 0.3s ease-in-out;
+    position: relative;
+    z-index: 10;
+}
+
+@property --angle{
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes spin{
+  from{
+    --angle: 0deg;
+  }
+  to{
+    --angle: 360deg;
+  }
 }
 
 .actors-card:hover{
     transform: scale(1.05);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    background-image: conic-gradient(from var(--angle), var(--red), var(--yellow), var(--blue), var(--red));
+    animation: 30s spin linear infinite;
 }
 
 .actor-photo{

@@ -34,6 +34,7 @@ class Actors{
         new Actors("Nia Mensah", 22, "Cape Coast, Ghana", "African", "Non-binary", ["Singing", "Drama", "Modeling"], "ActorPhotos/actor20.jpg")
     ];
     displayCards(actors);
+    dashboard();
 })()
 
 function displayCards(actors){
@@ -91,8 +92,26 @@ function displayMoreInfo(actor){
         skillContainer.innerText = skill
         skillWrapper.appendChild(skillContainer)
     })
+
+    closeModal()
 }
 
-// function closeModal(){
-//     const 
-// }
+function closeModal(){
+    const modalContainer = document.querySelector('.actors-details-container')
+    const modal = document.querySelector('.actors-details')
+
+    modalContainer.addEventListener('click', () => {
+        modalContainer.style.display = 'none'
+    })
+
+    modal.addEventListener('click', (e) => {
+        e.stopPropagation()
+    })
+}
+
+function dashboard(){
+    const dashboard = document.querySelector('.dashboard')
+    dashboard.addEventListener('click', () => {
+        window.location.href = 'talent-dashboard.html'
+    })
+}
