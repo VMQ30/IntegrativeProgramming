@@ -2,7 +2,31 @@
     signInButton();
     featuredActorsButton();
     infiniteScroll();
+    buttons();
 })()
+
+function buttons(){
+    const actorButton = document.querySelector('.actors-button')
+    const castingButton = document.querySelector('.casting-button')
+    const aboutButton = document.querySelector('.about-button')
+    const postJobButton = document.querySelector('.post-job')
+
+    aboutButton.addEventListener('click', () => {
+        window.location.href = 'about.html'
+    })
+
+    actorButton.addEventListener('click', () => {
+        window.location.href = 'browse-actors.html'
+    })
+
+    castingButton.addEventListener('click', () => {
+        window.location.href = 'casting.html'
+    })
+
+    postJobButton.addEventListener('click', () => {
+        window.location.href = 'casting.html'
+    })
+}
 
 function signInButton(){
     const signInButton = document.querySelector('.sign-in')

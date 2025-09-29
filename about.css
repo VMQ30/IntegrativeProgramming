@@ -1,6 +1,6 @@
 :root {
     --red: #ff1b69;
-    --yellow: #ff0;
+    --yellow: #ffc400;
     --blue: #2196f3;
     --secondary: #dcdcdc;
 }
@@ -60,6 +60,12 @@ nav {
     z-index: 50;
 }
 
+nav a {
+    font-family: 'Poppins';
+    text-decoration: none;
+    color: white;
+}
+
 nav ul {
     list-style: none;
     display: flex;
@@ -90,11 +96,6 @@ nav li:hover::before {
     transform: scaleX(1);
 }
 
-nav h1 {
-    font-size: 30px;
-    text-shadow: -4px 4px 0px rgb(0, 0, 0);
-    font-family: 'Poppins-Bold';
-}
 
 nav a {
     font-family: 'Poppins';
@@ -103,10 +104,11 @@ nav a {
 }
 
 nav .logo{
-  font-size: 2em;
-  font-family: 'Poppins-Bold';
-  color: white;
-  text-decoration-line:none ;
+    font-size: 2em;
+    font-family: 'Poppins-Bold';
+    color: white;
+    text-decoration-line: none;
+    text-shadow: -4px 4px 0px rgb(0, 0, 0);
 }
 
 nav div {

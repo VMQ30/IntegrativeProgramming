@@ -1,6 +1,6 @@
 :root {
     --red: #ff1b69;
-    --yellow: #ffc400;;
+    --yellow: #ffc400;
     --blue: #2196f3;
     --secondary: #dcdcdc;
 }
@@ -21,6 +21,22 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("Pictures/download.jpg") no-repeat center center / cover;
+    filter: grayscale(70%);
+    z-index: -1;
 }
 
 span {
@@ -74,6 +90,12 @@ nav li:hover::before {
     transform: scaleX(1);
 }
 
+nav h1 {
+    font-size: 30px;
+    text-shadow: -4px 4px 0px rgb(0, 0, 0);
+    font-family: 'Poppins-Bold';
+}
+
 nav a {
     font-family: 'Poppins';
     text-decoration: none;
@@ -81,11 +103,11 @@ nav a {
 }
 
 nav .logo{
-  font-size: 2em;
-  font-family: 'Poppins-Bold';
-  color: white;
-  text-decoration-line:none ;
-  text-shadow: -4px 4px 0px rgb(0, 0, 0);
+    font-size: 2em;
+    font-family: 'Poppins-Bold';
+    color: white;
+    text-decoration-line: none;
+    text-shadow: -4px 4px 0px rgb(0, 0, 0);
 }
 
 nav div {
@@ -93,7 +115,9 @@ nav div {
     align-items: center;
 }
 
-nav button{
+nav button,
+.about-button,
+.post-job {
     margin-left: 50px;
     font-family: 'Poppins-Bold';
     color: white;
@@ -105,7 +129,9 @@ nav button{
     position: relative;
 }
 
-nav button::after{
+nav button::after,
+.about-button::after,
+.post-job::after {
     content: '»';
     position: absolute;
     opacity: 0;
@@ -116,14 +142,19 @@ nav button::after{
     font-size: 1.5em;
 }
 
-nav button:hover{
+nav button:hover,
+.about-button:hover,
+.post-job:hover {
     padding-right: 35px;
 }
 
-nav button:hover::after{
+nav button:hover::after,
+.about-button:hover::after,
+.post-job:hover::after {
     opacity: 1;
     right: 10px;
 }
+
 
 footer{
     padding: 20px 8vw;
@@ -282,160 +313,75 @@ footer div .t{
     text-shadow: 3px -3px 0px var(--yellow);
 }
 
-.active{
-    font-weight: 900;
-    font-size: 1em;
+body.casting-page {
+    background: #f4f4f9;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
-@font-face {
-    font-family: 'PressStart2P';
-    src: url('fonts/PressStart2P-Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+.casting-container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
 }
 
-.main{
-    padding: 20px 5vw;
-}
-
-.main-chat{
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-    height:89%;
-    padding-bottom: 15px;  
-    column-gap: 20px;
-
-}
-
-.chat{
+.form-container {
     display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 80vh;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
-.chat-footer{
-    display: flex;
-    align-items: flex-end;
-    
-}
-
-.send{
-    color:white;
-    background-color: var(--red);
-    border:none;
-    width: 6vw;
+form {
+    background: #fff;
+    padding: 20px;
     border-radius: 10px;
-    height:80%;
-    margin-right:10px;
+    box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
+    width: 350px;
+}
+
+form input, form textarea, form button {
+    width: 100%;
+    margin: 8px 0;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+form button {
+    background: #007BFF;
+    color: #fff;
+    font-size: 16px;
     cursor: pointer;
 }
 
-.chat-messages{
-    width:100%;
-    height:100%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    height: 80vh;
+form button:hover {
+    background: #0056b3;
+}
+
+.casting-board {
+    margin-top: 40px;
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 2px 8px rgba(0,0,0,0.15);
+    max-height: 600px;
     overflow-y: auto;
-    overflow-x: hidden; 
-    padding: 20px 0px;
-    
 }
 
-.search,
-.chat-text{
-    padding: 10px;
-    width:100%;
-    border:none;
-    box-shadow: 0px 3px 3px 0 rgba(0, 0, 0, 0.234);
+.casting-card {
+    border: 1px solid #ddd;
     border-radius: 10px;
-    margin-top:10px;
+    padding: 15px;
+    margin-bottom: 20px;
 }
 
-.search:focus,
-.chat-text:focus{
-    outline: 2px solid;
-    outline-color:  var(--red);
+.casting-card h3 {
+    margin: 0 0 10px;
 }
 
-.contact-list{
-    padding:5px 10px;
-    background-color: #eaeaea;
-    border-radius: 10px;
-}
-
-.message{
-    display:flexbox;
-    padding:5px;
-    background-color: #c3e0f8;
-    border-radius: 10px;
-    max-width: 25vw;
-    margin-bottom:20px;
-    margin-right: 20px;
-    margin-left: 20px;
-    padding:15px;
-    box-shadow: 0px 3px 3px 3px rgba(0, 0, 0, 0.234);
-    font-family: 'Poppins';
-    font-size: 1em;
-}
-
-.message.sender{
-    align-self: flex-end;
-    background-color: white;
-}
-
-.hover-div{
-    display: flex;
-    align-items: center;
-}
-
-.hover-div:hover{
-    background-color: rgba(0, 0, 0, 0.09);
-}
-
-.none{
-    display: none;
-}
-
-.profile-pic{
-    background: linear-gradient(135deg, var(--blue), var(--yellow));
-    width: 60px;
-    height: 60px;
-    border-radius: 30px;
-    margin-right: 5px;
-}
-
-h2{
-    font-family: 'Poppins-Bold';
-    font-size: 2em;
-    background: linear-gradient(90deg, var(--red) 0%, var(--yellow) 50%, var(--blue) 100%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-    text-shadow: 2.5px -2.5px 0 black
-}
-
-h3{
-    font-family: 'Poppins-Bold';
-    font-size: 1em;
-}
-
-p{
-    font-family: 'Poppins';
-    font-size: 1em;
-}
-
-.chat-text{
-    background-color: #fdf2f5;
-}
-
-.contact-list div{
-    transition: background-color 0.3s ease;
-}
-
-input{
-    transition: 0.3s ease;
+section{
+  background-color: rgba(220, 220, 220, 1);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
 }

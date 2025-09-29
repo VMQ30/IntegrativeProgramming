@@ -574,3 +574,18 @@ main{
   font-size: 1em;
   font-family: 'Poppins';
 }
+
+
+nav a {
+  font-family: 'Poppins';
+  text-decoration: none;
+  color: white;
+}
+
+nav .logo{
+  font-size: 2em;
+  font-family: 'Poppins-Bold';
+  color: white;
+  text-decoration-line: none;
+  text-shadow: -4px 4px 0px rgb(0, 0, 0);
+}
