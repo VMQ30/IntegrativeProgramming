@@ -1,0 +1,441 @@
+:root {
+    --red: #ff1b69;
+    --yellow: #ffc400;;
+    --blue: #2196f3;
+    --secondary: #dcdcdc;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('Pictures/Poppins-Regular.ttf');
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins-Bold';
+    src: url('Pictures/Poppins-Bold.ttf');
+    font-style: normal;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+span {
+    margin-right: -5px;
+}
+
+.a { color: var(--red); }
+.c { color: var(--blue); }
+.t { color: var(--yellow); }
+
+nav {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 15px 40px;
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 50px;
+    font-size: 0.9rem;
+    font-weight: 100;
+    position: relative;
+}
+
+nav li {
+    position: relative;
+    padding-bottom: 5px;
+    font-size: 1em;
+}
+
+nav li::before {
+    position: absolute;
+    content: '';
+    height: 2px;
+    width: 100%;
+    background-image: linear-gradient(90deg, var(--red) 0%, var(--yellow) 50%, var(--blue) 100%);
+    bottom: 0;
+    transform: scaleX(0);
+    transition: 0.3s ease;
+}
+
+nav li:hover::before {
+    transform: scaleX(1);
+}
+
+nav a {
+    font-family: 'Poppins';
+    text-decoration: none;
+    color: white;
+}
+
+nav .logo{
+  font-size: 2em;
+  font-family: 'Poppins-Bold';
+  color: white;
+  text-decoration-line:none ;
+  text-shadow: -4px 4px 0px rgb(0, 0, 0);
+}
+
+nav div {
+    display: flex;
+    align-items: center;
+}
+
+nav button{
+    margin-left: 50px;
+    font-family: 'Poppins-Bold';
+    color: white;
+    background-color: var(--red);
+    border: none;
+    padding: 5px 25px;
+    cursor: pointer;
+    transition: ease-in-out 0.3s;
+    position: relative;
+}
+
+nav button::after{
+    content: '»';
+    position: absolute;
+    opacity: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0px;
+    transition: 0.5s;
+    font-size: 1.5em;
+}
+
+nav button:hover{
+    padding-right: 35px;
+}
+
+nav button:hover::after{
+    opacity: 1;
+    right: 10px;
+}
+
+footer{
+    padding: 20px 8vw;
+    background-color: var(--secondary);
+    height: 25vh;
+    margin-top: 80px;
+    position: relative;
+}
+
+.legal{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px;
+    border-top: 2px solid rgb(196, 196, 196);
+    width: 90%;
+    display: flex;
+    justify-content: center;
+}
+
+.footer-container{
+    display: flex;
+    flex-direction: column;
+}
+
+footer div{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.contact-us,
+.social-media{
+    display: flex;
+    flex-direction: column;
+}
+
+.social-media{
+    align-items: center;
+}
+
+.social-media div{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+footer button{
+    margin-top: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: transparent;
+    padding: 7px;
+    position: relative;
+    transition: 0.3s ease;
+    border: none;
+    background-color: black;
+}
+
+footer button:hover{
+    background-color: var(--accent-color);
+    transform: translateY(-10%);
+    box-shadow: 0 5px 7px rgb(0, 0, 0, 0.3)
+}
+
+footer button::before{
+    transition: 200ms cubic-bezier(.42, 0, .44, 1.68);
+    position: absolute;
+    content: attr(data-social);
+    width: 250%;
+    height: 100%;
+    background-color: var(--accent-color);
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-200%) rotate(20deg);
+    border-radius: 25px;
+    color: white;
+    font-size: 1em;
+    font-family: 'Poppins';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+}
+
+footer button::after{
+    transition: 200ms cubic-bezier(.42, 0, .44, 1.68);
+    position: absolute;
+    content: '';
+    background-color: transparent;
+    left: 50%;
+    top: 50%;
+    width: 0;
+    height: 0;
+    transform: translateY(-400%) translateX(-50%) rotate(20deg);
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 10px solid var(--accent-color);
+    opacity: 0;
+}
+
+footer button:hover::before{
+    opacity: 1;
+    transform: translateX(-50%) translateY(-170%) rotate(0);
+}
+footer button:hover::after{
+    opacity: 1;
+    transform: translateY(-300%) translateX(-50%) rotate(0);
+}
+
+footer h4{
+    font-family: 'Poppins-Bold';
+    font-size: 2em;
+}
+
+footer div p{
+    font-family: 'Poppins';
+}
+
+footer div h3{
+    font-size: 3em;
+    color: black;
+    font-family: 'Poppins-Bold';
+    text-shadow: 3px -3px 0px black;
+    background-image: linear-gradient(90deg,  var(--red) 50%, var(--yellow) 70%, var(--blue) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.footer-letter{
+    margin-right: -10px;
+}
+
+footer div .a,
+footer div .c,
+footer div .t{
+    background-color: black;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+footer div .a{
+    text-shadow: 3px -3px 0px var(--red);
+}
+
+footer div .c{
+    text-shadow: 3px -3px 0px var(--blue);
+}
+
+footer div .t{
+    text-shadow: 3px -3px 0px var(--yellow);
+}
+
+.active{
+    font-weight: 900;
+    font-size: 1em;
+}
+
+@font-face {
+    font-family: 'PressStart2P';
+    src: url('fonts/PressStart2P-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.main{
+    padding: 20px 5vw;
+}
+
+.main-chat{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    height:89%;
+    padding-bottom: 15px;  
+    column-gap: 20px;
+
+}
+
+.chat{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 80vh;
+}
+
+.chat-footer{
+    display: flex;
+    align-items: flex-end;
+    
+}
+
+.send{
+    color:white;
+    background-color: var(--red);
+    border:none;
+    width: 6vw;
+    border-radius: 10px;
+    height:80%;
+    margin-right:10px;
+    cursor: pointer;
+}
+
+.chat-messages{
+    width:100%;
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    height: 80vh;
+    overflow-y: auto;
+    overflow-x: hidden; 
+    padding: 20px 0px;
+    
+}
+
+.search,
+.chat-text{
+    padding: 10px;
+    width:100%;
+    border:none;
+    box-shadow: 0px 3px 3px 0 rgba(0, 0, 0, 0.234);
+    border-radius: 10px;
+    margin-top:10px;
+}
+
+.search:focus,
+.chat-text:focus{
+    outline: 2px solid;
+    outline-color:  var(--red);
+}
+
+.contact-list{
+    padding:5px 10px;
+    background-color: #eaeaea;
+    border-radius: 10px;
+}
+
+.message{
+    display:flexbox;
+    padding:5px;
+    background-color: #c3e0f8;
+    border-radius: 10px;
+    max-width: 25vw;
+    margin-bottom:20px;
+    margin-right: 20px;
+    margin-left: 20px;
+    padding:15px;
+    box-shadow: 0px 3px 3px 3px rgba(0, 0, 0, 0.234);
+    font-family: 'Poppins';
+    font-size: 1em;
+}
+
+.message.sender{
+    align-self: flex-end;
+    background-color: white;
+}
+
+.hover-div{
+    display: flex;
+    align-items: center;
+}
+
+.hover-div:hover{
+    background-color: rgba(0, 0, 0, 0.09);
+}
+
+.none{
+    display: none;
+}
+
+.profile-pic{
+    background: linear-gradient(135deg, var(--blue), var(--yellow));
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    margin-right: 5px;
+}
+
+h2{
+    font-family: 'Poppins-Bold';
+    font-size: 2em;
+    background: linear-gradient(90deg, var(--red) 0%, var(--yellow) 50%, var(--blue) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    text-shadow: 2.5px -2.5px 0 black
+}
+
+h3{
+    font-family: 'Poppins-Bold';
+    font-size: 1em;
+}
+
+p{
+    font-family: 'Poppins';
+    font-size: 1em;
+}
+
+.chat-text{
+    background-color: #fdf2f5;
+}
+
+.contact-list div{
+    transition: background-color 0.3s ease;
+}
+
+input{
+    transition: 0.3s ease;
+}
