@@ -460,7 +460,7 @@ main{
   right: 20px;
 }
 
-.confirmation-container{
+.modal-container{
     width: 100%;
     height: 100vh;
     z-index: 1000;
