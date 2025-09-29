@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Casting Posts | ACTOR.PH</title>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* Card styling for posted calls */
+    .casting-board {
+      margin: 40px auto;
+      max-width: 900px;
+      padding: 20px;
+    }
+
+    .casting-card {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0px 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .casting-card h3 {
+      margin-top: 0;
+      color: #333;
+    }
+
+    /* ✅ Keep footer at the bottom */
+    html, body {
+      height: 100%;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    main {
+      flex: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <h1>
+      <span class="a">A</span>
+      <span class="c">C</span>
+      <span class="t">T</span> OR.PH
+    </h1>
+    <div>
+      <ul>
+         <li><a href="index.html">Home</a></li>
+        <li><a href="actors.html">Browse Actors</a></li>
+        <li><a href="casting.html">Post a Casting Call</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+      <button class="sign-in">Sign In</button>
+    </div>
+  </nav>
+
+  <main>
+    <div class="casting-board">
+      <h2>Posted Casting Calls</h2>
+      <div id="castingBoard"></div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <div>
+        <h3>
+          <span class="a footer-letter">A</span>
+          <span class="c footer-letter">C</span>
+          <span class="t footer-letter">T</span> OR.PH
+        </h3>
+        <div class="contact-us">
+          <h4>Contact Us!</h4>
+          <p>CONTACT: +63 900 555 0000</p>
+          <p>EMAIL: ACTor.PH@gmail.com</p>
+        </div>
+
+        <div class="social-media">
+          <h4>Follow Us!</h4>
+          <div></div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+   <style>
+   body.casting-page {
+      background: #f4f4f9;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .casting-container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    .form-container {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    form {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
+      width: 350px;
+    }
+
+    form input, form textarea, form button {
+      width: 100%;
+      margin: 8px 0;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .casting-board {
+      margin-top: 40px;
+      background: #fff;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0px 2px 8px rgba(0,0,0,0.15);
+      max-height: 600px;
+      overflow-y: auto;
+    }
+
+    .casting-card {
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 15px;
+      margin-bottom: 20px;
+    }
+
+    .casting-card h3 {
+      margin: 0 0 10px;
+    }
+  </style>
+</head>
+<body class="casting-page">
+
+  <script>
+    const board = document.getElementById("castingBoard");
+    const calls = JSON.parse(localStorage.getItem("castingCalls")) || [];
+
+    if (calls.length === 0) {
+      board.innerHTML = "<p>No casting calls available yet.</p>";
+    } else {
+      calls.forEach((call) => {
+        const card = document.createElement("div");
+        card.classList.add("casting-card");
+        card.innerHTML = `
+          <h3>${call.title}</h3>
+          <p><strong>Description:</strong> ${call.description}</p>
+          <p><strong>Deadline:</strong> ${call.deadline}</p>
+          <p><strong>Location:</strong> ${call.location}</p>
+        `;
+        board.appendChild(card);
+      });
+    }
+  </script>
+</body>
+</html>
