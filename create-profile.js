@@ -2,6 +2,7 @@
     checkAge();
     buttonClicked();
     dashboardButton();
+    addSkills()
 })()
 
 function dashboardButton(){
@@ -13,12 +14,12 @@ function dashboardButton(){
 
 function checkAge(){
     const nextButton = document.querySelector('.next')
-    const modal = document.querySelector('.modal-container')
+    const modalContainer = document.querySelector('.modal-container')
     const age = document.querySelector('.user-age')
     nextButton.addEventListener('click', () => {
         if (age.value < 18){
-            modal.style.display = 'flex'
-            modal.innerHTML = `<div class = 'confirmation'>
+            modalContainer.style.display = 'flex'
+            modalContainer.innerHTML = `<div class = 'confirmation'>
                 <h3>Verify your Identity</h3>
                 <p>ACTor.PH does not allow the creation of user profiles for children under the age of 18 without their parent or legal guardian’s consent. By checking the box below, you hereby affirm that you are the parent or legal guardian of the child whose profile you’re creating.</p>
 
@@ -30,17 +31,17 @@ function checkAge(){
                 <button class = 'confirm-button'>Next</button>
             </div>`
 
-            closeModal();
+            const modal = document.querySelector('.confirmation')
+            closeModal(modal);
 
         }
 
     })
 }
 
-function closeModal(){
-    const modal = document.querySelector('.confirmation')
+function closeModal(modal){
     const modalBackground = document.querySelector('.modal-container')
-    
+
     modalBackground.addEventListener('click', () => {
         modalBackground.style.display = 'none'
     })
@@ -57,5 +58,30 @@ function buttonClicked(){
             button.style.backgroundColor = '#ff1b69'
             button.style.color = 'white'
         })
+    })
+}
+
+function addSkills(){
+    const addMoreButton = document.querySelector('.add-skills')
+    const modalContainer = document.querySelector('.modal-container')
+    addMoreButton.addEventListener('click', () => {
+        modalContainer.style.display = 'flex'
+        modalContainer.innerHTML = `<div class = 'modal'>
+                <h3>Add a New Skill</h3>
+                <input type="text" class="new-skill" placeholder="Enter skill name">
+                <div>
+                    <button class="save-skill">Save</button>
+                    <button class="close-skill-modal">Cancel</button>
+                </div>
+            </div>`
+
+        const modal = document.querySelector('.modal')
+        const close = document.querySelector('.close-skill-modal')
+
+        close.addEventListener('click', () => {
+            modalContainer.style.display = 'none'
+        })
+        
+        closeModal(modal)
     })
 }

@@ -472,6 +472,81 @@ main{
     display: none;
 }
 
+.modal{    
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  background-color: #ececec;
+  padding: 20px 40px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50vw;
+  height: 40vh;
+}
+
+.modal h3{
+    font-size: 3em;
+    font-family: 'Poppins-Bold';
+    margin: 20px 0;
+    justify-self: center;
+    background: linear-gradient(90deg, var(--red) 0%, var(--yellow) 50%, var(--blue) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    text-shadow: 3px -3px 0 black;
+    
+}
+
+.modal p{
+    font-size: 1em;
+    font-family: 'Poppins';
+}
+
+.modal input{
+  font-size: 1em;
+  font-family: 'Poppins';
+  padding: 5px 10px;
+  width: 80%;
+  margin-bottom: 30px;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  outline: none;
+  transition: 0.2s ease;
+  caret-color: var(--blue);
+}
+
+.modal input:focus{
+    border: 2px solid var(--blue);
+}
+
+.modal div{
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  gap: 20px
+}
+.modal button{
+  padding: 10px 40px;
+  border-radius: 5px;
+  font-family: 'Poppins';
+  font-size: 1em;
+  cursor: pointer;
+  width: 30%;
+  border: 2px var(--red) solid;
+  color: var(--red);
+  transition: 0.3s ease;
+}
+
+.modal button:hover{
+  color: white;
+  background-color: var(--red);
+  transform: scale(1.05);
+}
+
 .confirmation{    
     position: fixed;
     top: 40%;
