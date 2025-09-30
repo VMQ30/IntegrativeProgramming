@@ -44,11 +44,11 @@ function sendMessage(){
 
 function styleMessage(){
     const contactArray = [
-        new Contacts("NexaCloud Solutions", "10:42 AM", "Maria: Our DevOps team has pushed the latest security patch to production."),
-        new Contacts("QuantumByte AI", "Yesterday, 3:15 PM", "Dray: Can you confirm the model version used for the last deployment?"),
-        new Contacts("CircuitStream Labs", "Today, 9:58 AM", "Mark: The real-time analytics dashboard is now fully operational."),
-        new Contacts("FusionStack Technologies", "Friday, 6:31 PM", "Jenny: We've integrated the new API endpoint for billing queries."),
-        new Contacts("VertexNet Security", "Monday, 11:02 AM", "Amy: All servers passed the vulnerability scan with no critical issues.")
+        new Contacts("Director James Miller", "10:42 AM", "James: We’ll do your first rehearsal at the studio tomorrow morning."),
+        new Contacts("Casting Agent Maria Lopez", "Yesterday, 3:15 PM", "Maria: Please confirm your availability for the audition on Friday."),
+        new Contacts("Co-Actor Daniel Cruz", "Today, 9:58 AM", "Daniel: Let’s practice our dialogue together before the table read."),
+        new Contacts("Manager Sophia Reyes", "Friday, 6:31 PM", "Sophia: I’ve sent your updated portfolio to the producers."),
+        new Contacts("Producer Alex Johnson", "Monday, 11:02 AM", "Alex: The filming schedule has been finalized — I’ll send it shortly.")
     ];
 
     contactArray.forEach((contact) =>{

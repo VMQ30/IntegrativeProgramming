@@ -463,7 +463,8 @@ main{
     font-family: 'Poppins';
 }
 
-.profile-button{
+.profile-button,
+.post-job{
     background-color: transparent;
     cursor: pointer;
     border: 2px solid var(--blue);
@@ -477,7 +478,8 @@ main{
     transition: ease 0.3s;
 }
 
-.profile-button:hover{
+.profile-button:hover,
+.post-job:hover{
     transform: translateY(-10%);
     background-color: var(--blue);
     color: white;

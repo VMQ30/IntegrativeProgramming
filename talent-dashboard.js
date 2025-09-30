@@ -53,5 +53,11 @@ sendBtn.addEventListener("click", async () => {
   }, 1000);
 });
 
+console.log('hi')
+const profileButton = document.querySelector('.profile-button')
+profileButton.addEventListener('click', () => {
+  window.location.href = 'create-profile.html'
+})
+
 
 
