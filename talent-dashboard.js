@@ -30,13 +30,21 @@ sendBtn.addEventListener("click", async () => {
 
     if (/hello|hi/i.test(message)) {
       reply = "Hello! 👋 I'm Aivy. How can I help you today?";
-    } else if (/name/i.test(message)) {
+    } 
+    
+    else if (/name/i.test(message)) {
       reply = "My name is Aivy — your friendly chatbot!";
-    } else if (/how are you/i.test(message)) {
+    } 
+    
+    else if (/how are you/i.test(message)) {
       reply = "I'm doing great, thank you for asking! 😊";
-    } else if (/bye|goodbye/i.test(message)) {
+    } 
+    
+    else if (/bye|goodbye/i.test(message)) {
       reply = "Goodbye! Have a wonderful day 🌸";
-    } else {
+    } 
+    
+    else {
       reply = `You said: "${message}". That's interesting! Tell me more.`;
     }
 
