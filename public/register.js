@@ -53,6 +53,7 @@ async function login(event) {
     const data = await response.json();
 
     if (response.ok) {
+        localStorage.setItem("token", data.token)
         window.location.href = "talent-dashboard.html";
     } else {
         alert(data.msg);

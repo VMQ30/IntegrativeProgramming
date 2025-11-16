@@ -1,7 +1,8 @@
 const express = require("express");
 const router = express.Router();
-const profile = require('../controllers/profile')
+const { profile } = require('../controllers/profile')
+const requireAuth = require('../middleware/requireAuth');
 
-router.route('/create').post(profile)
+router.post('/create', requireAuth, profile)
 
 module.exports = router;

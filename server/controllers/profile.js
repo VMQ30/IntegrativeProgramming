@@ -2,7 +2,11 @@ const Profile = require("../models/Profile");
 
 const profile = async(req,res) => {
     try {
-        const profile = new Profile(req.body);
+        const profile = new Profile({ 
+            user : req.user.id,
+            ...req.body
+        });
+
         await profile.save();
 
         res.json({
@@ -19,4 +23,4 @@ const profile = async(req,res) => {
     }
 }
 
-module.exports = profile
+module.exports = { profile }

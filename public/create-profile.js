@@ -15,7 +15,7 @@ function dashboardButton(){
 function checkAge(){
     const nextButton = document.querySelector('.next')
     const modalContainer = document.querySelector('.modal-container')
-    const age = document.querySelector('.user-age')
+    const age = document.getElementById("age").value;
     nextButton.addEventListener('click', () => {
         if (age.value < 18){
             modalContainer.style.display = 'flex'
@@ -86,6 +86,8 @@ function addSkills(){
     })
 }
 
+const token = localStorage.getItem("token");
+
 document.getElementById("submitProfile").addEventListener("click", async () => {
     const stageName = document.getElementById("stage-name").value;
     const age = document.getElementById("age").value;
@@ -127,6 +129,7 @@ document.getElementById("submitProfile").addEventListener("click", async () => {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
+                "Authorization": `Bearer ${token}`,
             },
             body: JSON.stringify(profileData),
         });

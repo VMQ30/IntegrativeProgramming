@@ -1,5 +1,6 @@
 const User = require('../models/User')
 const bcrypt = require('bcryptjs')
+const jwt = require('jsonwebtoken')
 
 const signUpUser = async(req, res) => {
     const { firstName , lastName , email , password } = req.body
@@ -43,7 +44,10 @@ const loginUser = async( req , res ) => {
     try{
         const user = await User.findOne({ email })
         if(!user){
-            return res.status(400).json({ msg : 'Invalid Credentials' })
+            return res.status(400).json({ 
+                success : false,
+                msg : 'Invalid Credentials' 
+            })
         }
 
         const isMatch = await bcrypt.compare(password , user.password)
@@ -54,9 +58,16 @@ const loginUser = async( req , res ) => {
             })
         }
         
+        const token = jwt.sign(
+            { id: user._id },
+            process.env.JWT_SECRET,
+            { expiresIn: "1h" }
+        );
+
         res.json({ 
             success : true,
-            msg: "Login successful" 
+            msg: "Login successful" ,
+            token
         });
     }
     catch{
