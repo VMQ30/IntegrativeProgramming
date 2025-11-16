@@ -85,3 +85,69 @@ function addSkills(){
         closeModal(modal)
     })
 }
+
+document.getElementById("submitProfile").addEventListener("click", async () => {
+    const stageName = document.getElementById("stage-name").value;
+    const age = document.getElementById("age").value;
+    const location = document.getElementById("location").value;
+
+    // Collect selected gender
+    const genderButtons = document.querySelectorAll(".gender .option-button");
+    let selectedGender = null;
+    genderButtons.forEach(btn => {
+        if (btn.classList.contains("selected")) selectedGender = btn.textContent;
+    });
+
+    // Collect selected ethnicities
+    const ethButtons = document.querySelectorAll(".ethnicity .option-button");
+    const selectedEthnicities = [];
+    ethButtons.forEach(btn => {
+        if (btn.classList.contains("selected")) selectedEthnicities.push(btn.textContent);
+    });
+
+    // Collect skills
+    const skillButtons = document.querySelectorAll(".skills .option-button");
+    const selectedSkills = [];
+    skillButtons.forEach(btn => {
+        if (btn.classList.contains("selected")) selectedSkills.push(btn.textContent);
+    });
+
+    // Save to backend
+    const profileData = {
+        stageName,
+        gender: selectedGender,
+        ethnicities: selectedEthnicities,
+        age,
+        location,
+        skills: selectedSkills
+    };
+
+    try {
+        const response = await fetch("http://localhost:5000/profile/create", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(profileData),
+        });
+
+        const data = await response.json();
+
+        if (data.success) {
+            alert("Profile created successfully!");
+            window.location.href = "talent-dashboard.html";
+        } else {
+            alert("Error: " + data.message);
+        }
+    } catch (error) {
+        alert("Something went wrong.");
+        console.log(error);
+    }
+});
+
+// Add click selection logic for buttons
+document.querySelectorAll(".option-button").forEach(btn => {
+    btn.addEventListener("click", () => {
+        btn.classList.toggle("selected");
+    });
+});

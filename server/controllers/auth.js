@@ -7,7 +7,10 @@ const signUpUser = async(req, res) => {
     try{
         const exists = await User.findOne({ email })
         if(exists){
-            return res.status(400).json({ msg : 'Email Already Exists'})
+            return res.status(400).json({ 
+                success : false,
+                msg : 'Email Already Exists'
+            })
         }
 
         const hashedPassword = await bcrypt.hash(password, 10)
@@ -20,11 +23,17 @@ const signUpUser = async(req, res) => {
 
         await user.save()
 
-        res.json( { msg : 'Sign Successful'})
+        res.json( { 
+            success : true,
+            msg : 'Sign Successful'
+        })
     }
 
     catch( error ){
-        res.status(500).json({ msg : 'Server Error' })
+        res.status(500).json({ 
+            success : false,
+            msg : 'Server Error' 
+        })
     }
 }
 
@@ -39,13 +48,22 @@ const loginUser = async( req , res ) => {
 
         const isMatch = await bcrypt.compare(password , user.password)
         if(!isMatch){
-            return res.status(400).json({ msg : 'Invalid Credentials' })
+            return res.status(400).json({ 
+                success : false,
+                msg : 'Invalid Credentials' 
+            })
         }
         
-        res.json({ msg: "Login successful" });
+        res.json({ 
+            success : true,
+            msg: "Login successful" 
+        });
     }
     catch{
-        res.status(500).json({ msg : 'Server Error' })
+        res.status(500).json({ 
+            success : false,
+            msg : 'Server Error' 
+        })
     }
 }
 

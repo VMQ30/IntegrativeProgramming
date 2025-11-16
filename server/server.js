@@ -13,6 +13,7 @@ app.use(express.json());
 
 // Routes
 app.use("/auth", require("./routes/auth"));
+app.use("/profile", require("./routes/profile"));
 
 // DB Connect
 mongoose.connect(process.env.MONGO_URI)
