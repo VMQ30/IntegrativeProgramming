@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="register.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ACTOR.PH</title>
+    </head>
+    <body>
+        <nav>
+            <a href="index.html">
+                <span class="a">A</span>
+                <span class="c">C</span>
+                <span class="t">T</span>
+                OR.PH
+            </a>
+        </nav>
+
+        <main>
+            <div class='panel'>
+                <div class='sign-up-panel'>
+                    <h2>Start Your Journey Now!</h2>
+                    <p>If you do not have an account yet, join us and start your journey here</p>
+                    <button class='change-sign-up'>Sign Up</button>
+                </div>
+                <div class='sign-in-panel'>
+                    <h2>Welcome User!</h2>
+                    <p>Welcome back! If you already have an account, log in to continue</p>
+                    <button class='change-sign-in'>Sign In</button>
+                </div>
+            </div>
+
+            <div class='sign-in'>
+                <h2>Sign In Here</h2>
+                <p>Welcome back! Sign in to continue the fun</p>
+
+                <div class = 'sign-in-panel'>
+                    <form class="sign-in-form">
+                        <div class='input-wrapper' data-label='Email'>
+                            <label for='sign-in-email'>Email:</label>
+                            <input class='textbox' type='email' id='sign-in-email' required>
+                        </div>
+
+                        <div class='input-wrapper' data-label='Password'>
+                            <label for='sign-in-password'>Password:</label>
+                            <input class='textbox' type='password' id='sign-in-password' required>
+                        </div>
+
+                        <input type="submit" value="Submit" class='submit-button'>
+                    </form>
+                </div> 
+            </div>
+
+            <div class='sign-up'>
+                <h2>Sign Up Today!</h2>
+                <p>Join today and unlock new opportunities</p>
+
+                <div class = 'sign-up-panel'>
+                    <form class="sign-up-form">
+                        <div class='input-wrapper' data-label='First Name'>
+                            <label for='first-name'>First Name:</label>
+                            <input class='textbox' type='text' id='first-name' required>
+                        </div>
+
+                        <div class='input-wrapper' data-label='Last Name'>
+                            <label for='last-name'>Last Name:</label>
+                            <input class='textbox' type='text' id='last-name' required>
+                        </div>
+
+                        <div class='input-wrapper' data-label='Email'>
+                            <label for='signup-email'>Email:</label>
+                            <input class='textbox' type='email' id='signup-email' required>
+                        </div>
+
+                        <div class='input-wrapper' data-label='Password'>
+                            <label for='sign-up-password'>Password:</label>
+                            <input class='textbox' type='password' id='sign-up-password' required>
+                        </div>
+
+                        <div class='input-wrapper' data-label='Confirm Password'>
+                            <label for='signup-confirm-password'>Confirm Password:</label>
+                            <input class='textbox' type='password' id='signup-confirm-password' required>
+                        </div>
+
+                        <input type="submit" value="Submit" class='submit-button'>
+                    </form>
+                </div>
+            </div>
+        </main>
+
+        <script src='register.js'></script>
+    </body>
+</html>
