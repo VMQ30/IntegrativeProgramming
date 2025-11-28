@@ -38,7 +38,7 @@ async function loadProfile(){
     document.getElementById("actor-age").textContent = `Age: ${profile.age}`
     document.getElementById("actor-gender").textContent = `Gender: ${profile.gender}`
     document.getElementById("actor-location").textContent = `Location: ${profile.location}`
-    document.getElementById("actor-ethnicity").textContent = `Ethnicity: ${data.ethnicity?.join(", ")}`
-    document.getElementById("actor-skills").textContent = `Skills: ${data.skills}`
-   
+    document.getElementById("actor-ethnicity").textContent = `Ethnicity: ${profile.ethnicities?.join(", ")}`
+    document.getElementById("actor-skills").textContent = `Skills: ${profile.skills?.join(", ")}`
+    
 }
