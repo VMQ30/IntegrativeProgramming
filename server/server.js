@@ -12,16 +12,9 @@ app.use(express.static(path.join(__dirname, "../public")));
 app.use(express.json());
 
 app.use(cors({
-    origin: 'https://integrativeprogramming.onrender.com', // frontend URL
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-    credentials: true // if you need cookies/auth
-}));
-
-// Handle preflight OPTIONS requests
-app.options(/.*/, cors({
     origin: 'https://integrativeprogramming.onrender.com',
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-    credentials: true
+    credentials: true 
 }));
 
 app.get("/", (req, res) => {
