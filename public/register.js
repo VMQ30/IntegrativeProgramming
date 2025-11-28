@@ -44,7 +44,12 @@ async function login(event) {
     const email = document.querySelector("#sign-in-email").value;
     const password = document.querySelector("#sign-in-password").value;
 
-    const response = await fetch("http://localhost:5000/auth/login", {
+    const API_URL =
+  window.location.hostname === "localhost"
+    ? "http://localhost:5000"
+    : "https://actorsph.onrender.com";
+
+    const response = await fetch((`${API_URL}/auth/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password })
@@ -73,7 +78,12 @@ async function signup(event) {
         return;
     }
 
-    const response = await fetch("http://localhost:5000/auth/signup", {
+    const API_URL =
+  window.location.hostname === "localhost"
+    ? "http://localhost:5000"
+    : "https://actorsph.onrender.com";
+
+    const response = await fetch(`${API_URL}/auth/signup`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ firstName, lastName, email, password })
