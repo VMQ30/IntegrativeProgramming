@@ -15,7 +15,6 @@ function checkTextBox() {
 }
 
 function movePanel() {
-    console.log('hi')
     const panel = document.querySelector('.panel');
     const signIn = document.querySelector('.change-sign-in');
     const signUp = document.querySelector('.change-sign-up');
@@ -50,11 +49,11 @@ async function login(event) {
     ? "http://localhost:5000"
     : "https://actorsph.onrender.com";
 
-    const response = await fetch((`${API_URL}/auth/login`, {
+    const response = await fetch(`${API_URL}/auth/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password })
-    }))
+    })
 
     const data = await response.json();
 
