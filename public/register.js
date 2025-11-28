@@ -15,6 +15,7 @@ function checkTextBox() {
 }
 
 function movePanel() {
+    console.log('hi')
     const panel = document.querySelector('.panel');
     const signIn = document.querySelector('.change-sign-in');
     const signUp = document.querySelector('.change-sign-up');
@@ -53,7 +54,7 @@ async function login(event) {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password })
-    });
+    }))
 
     const data = await response.json();
 
