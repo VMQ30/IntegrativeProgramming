@@ -13,8 +13,20 @@ app.get("/", (req, res) => {
 });
 
 // Middleware
-app.use(cors());
 app.use(express.json());
+
+app.use(cors({
+    origin: 'https://integrativeprogramming.onrender.com', // frontend URL
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    credentials: true // if you need cookies/auth
+}));
+
+// Handle preflight OPTIONS requests
+app.options('*', cors({
+    origin: 'https://integrativeprogramming.onrender.com',
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    credentials: true
+}));
 
 // Routes
 app.use("/auth", require("./routes/auth"));
