@@ -8,10 +8,6 @@ const app = express();
 
 app.use(express.static(path.join(__dirname, "../public")));
 
-app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "../public/index.html"));
-});
-
 // Middleware
 app.use(express.json());
 
@@ -22,11 +18,15 @@ app.use(cors({
 }));
 
 // Handle preflight OPTIONS requests
-app.options('*', cors({
+app.options(/.*/, cors({
     origin: 'https://integrativeprogramming.onrender.com',
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     credentials: true
 }));
+
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "../public/index.html"));
+});
 
 // Routes
 app.use("/auth", require("./routes/auth"));
