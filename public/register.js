@@ -47,7 +47,7 @@ async function login(event) {
     const API_URL =
   window.location.hostname === "localhost"
     ? "http://localhost:5000"
-    : "https://actorsph.onrender.com";
+    : "https://integrativeprogramming.onrender.com";
 
     const response = await fetch(`${API_URL}/auth/login`, {
         method: "POST",
@@ -81,7 +81,7 @@ async function signup(event) {
     const API_URL =
   window.location.hostname === "localhost"
     ? "http://localhost:5000"
-    : "https://actorsph.onrender.com";
+    : "https://integrativeprogramming.onrender.com";
 
     const response = await fetch(`${API_URL}/auth/signup`, {
         method: "POST",
